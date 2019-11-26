@@ -20,7 +20,7 @@ When the __"runner"__ host uses this profile overlay for the first time, follow 
 ```
 mkdir profiles
 cd profiles
-git clone https://github.com/mitre/canonical-ubuntu-16.04-lts-stig-baseline.git
+git clone https://github.com/mitre/microsoft-windows-server-2016-stig-baseline.git
 git clone https://github.cms.gov/ISPG/cms-ars-3.1-high-microsoft-windows-server-2016-stig-overlay.git
 cd cms-ars-3.1-high-microsoft-windows-server-2016-stig-overlay
 bundle install
@@ -30,7 +30,7 @@ inspec exec cms-ars-3.1-high-microsoft-windows-server-2016-stig-overlay --input-
 For every successive run, follow these steps to always have the latest version of this overlay and dependent profiles:
 
 ```
-cd profiles/canonical-ubuntu-16.04-lts-stig-baseline
+cd profiles/microsoft-windows-server-2016-stig-baseline
 git pull
 cd ../cms-ars-3.1-high-microsoft-windows-server-2016-stig-overlay
 git pull
