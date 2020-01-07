@@ -18,7 +18,7 @@ The following inputs must be configured in inspec.yml for the profile to run cor
 
 ## Running This Overlay
 
-When the __"runner"__ host uses this profile overlay for the first time, follow these steps: 
+When the __"runner"__ host uses this profile overlay for the first time, follow these steps:
 
 ```bash
 mkdir profiles
