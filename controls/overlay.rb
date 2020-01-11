@@ -302,10 +302,6 @@ include_controls 'microsoft-windows-server-2016-stig-baseline' do
     Settings >> Security Settings >> Account Policies >> Password Policy >>
     \"Minimum password length\" to \"15\" characters."
   end
-  control 'V-73325' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not mandatory in CMS ARS 3.1'
-  end
   control 'V-73387' do
     title "The directory service must be configured to terminate LDAP-based
     network connections to the directory server after 30 minutes of inactivity."
