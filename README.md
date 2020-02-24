@@ -1,6 +1,6 @@
 # (WIP) cms-ars-3.1-high-microsoft-windows-server-2016-stig-overlay
 
-(WIP) InSpec profile overlay to validate the secure configuration of Microsoft Windows Server 2016 against DISA's Microsoft Windows Server 2016 STIG tailored for CMS ARS 3.1 for CMS systems categorized as High.
+InSpec profile overlay to validate the secure configuration of Microsoft Windows Server 2016 against [DISA's](https://iase.disa.mil/stigs/Pages/index.aspx) Microsoft Windows Server 2016 STIG tailored for [CMS ARS 3.1](https://www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Info-Security-Library-Items/ARS-31-Publication.html) for CMS systems categorized as High.
 
 ## Getting Started
 
@@ -14,8 +14,45 @@ Git is required to download the latest InSpec profiles using the instructions be
 
 The following inputs must be configured in inspec.yml for the profile to run correctly. More information about InSpec inputs can be found in the [InSpec Profile Documentation](https://www.inspec.io/docs/reference/profiles/).
 
-## [INSERT REQUIRED inputs.yml HERE]
+```
 
+# description: 'List of authorized users in the Backup Operators Group'
+backup_operators: []
+
+# description: 'List of authorized users in the local Administrators group'
+administrators: []
+
+# description: 'List of authorized users in the local Administrators domain group'
+administrators_domain: []
+
+# description: 'List of temporary accounts on the system'
+temp_account: []
+
+# description: 'List of emergency accounts on the system'
+emergency_account: []
+
+# description: 'List of authorized users in the local Administrators domain group'
+administrator_domain_group: []
+
+# description: 'List of shared accounts on the system'
+shared_accounts: []
+
+# description: 'Set to true server has the ftp server role'
+has_ftp_server_role: true
+
+# description: 'Domain Controller forrest name'
+forrest: ''
+
+# description: 'Default administator account'
+admin_account: ''
+
+# description: 'Set to true if the system is dedicated to the management of Active Directory'
+is_AD_only_system: false
+
+# description: 'A list of all manually managed Application and Service account names'
+manually_managed_app_service_accounts: []
+
+```
 ## Running This Overlay
 
 When the __"runner"__ host uses this profile overlay for the first time, follow these steps:
@@ -28,7 +65,7 @@ git clone https://github.cms.gov/ISPG/cms-ars-3.1-high-microsoft-windows-server-
 cd cms-ars-3.1-high-microsoft-windows-server-2016-stig-overlay
 bundle install
 cd ..
-inspec exec cms-ars-3.1-high-microsoft-windows-server-2016-stig-overlay --input-file cms-ars-3.1-high-microsoft-windows-server-2016-stig-overlay/static-inputs.yml -t winrm://<hostname> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
+inspec exec cms-ars-3.1-high-microsoft-windows-server-2016-stig-overlay --input-file <path_to_your_input_file/name_of_your_input_file.yml> cms-ars-3.1-high-microsoft-windows-server-2016-stig-overlay/static-inputs.yml -t winrm://<hostname> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
 ```
 
 For every successive run, follow these steps to always have the latest version of this overlay and dependent profiles:
@@ -40,7 +77,7 @@ cd ../cms-ars-3.1-high-microsoft-windows-server-2016-stig-overlay
 git pull
 bundle install
 cd ..
-inspec exec cms-ars-3.1-high-microsoft-windows-server-2016-stig-overlay --input-file cms-ars-3.1-high-microsoft-windows-server-2016-stig-overlay/static-inputs.yml -t winrm://<hostname> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
+inspec exec cms-ars-3.1-high-microsoft-windows-server-2016-stig-overlay --input-file <path_to_your_input_file/name_of_your_input_file.yml> cms-ars-3.1-high-microsoft-windows-server-2016-stig-overlay/static-inputs.yml -t winrm://<hostname> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
 ```
 
 ## Viewing the JSON Results
@@ -54,14 +91,12 @@ The JSON InSpec results file may also be loaded into a __[full heimdall server](
 To report a bug or feature request, please open an [issue](https://github.cms.gov/ISPG/cms-ars-3.1-high-microsoft-windows-server-2016-stig-overlay/issues/new).
 
 ## Authors
-
-* author_1
-* author_2
+* Krisha Kola, DIFZ
+* Eugene Aronne, MITRE
 
 ## Special Thanks
-
-* person_1
-* person_2
+* Aaron Lippold, MITRE
+* The MITRE InSpec Team
 
 ## License
 
