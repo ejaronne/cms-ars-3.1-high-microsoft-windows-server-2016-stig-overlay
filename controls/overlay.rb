@@ -1,7 +1,7 @@
 # legal_notice_caption = input('legal_notice_caption', value: '-= WARNING =- -= WARNING =- -= WARNING =-', priority: 90)
 include_controls 'microsoft-windows-server-2016-stig-baseline' do
   control 'V-73231' do
-    title 'Manually managed application account passwords must be changed at
+    title 'TESTCHANGE Manually managed application account passwords must be changed at
     least every 60 days and when a system administrator with knowledge of the password
     leaves the organization.'
     desc 'check', 'Determine if manually managed application/service accounts exist.
