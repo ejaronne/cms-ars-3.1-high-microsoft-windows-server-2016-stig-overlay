@@ -72,6 +72,7 @@ inputs:
     value: false
 
   - name: legal_notice_text
+    priority: 90
     description: 'Standard Legal Notice Text shown to the user on login'
     type: String
     value: "* This warning banner provides privacy and security notices consistent with applicable federal laws, directives, and other federal guidance for accessing this Government system, which includes (1) this computer network, (2) all computers connected to this network, and (3) all devices and storage media attached to this network or to a computer on this network.
@@ -83,6 +84,7 @@ inputs:
               -     Any communication or data transiting or stored on this system may be disclosed or used for any lawful Government purpose."
 
   - name: legal_notice_caption
+    priority: 90
     description: 'Standard Legal Notice Caption to go along with the Standard Legal Notice Text'
     type: String
     value: "-= WARNING =- -= WARNING =- -= WARNING =-"
